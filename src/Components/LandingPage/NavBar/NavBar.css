@@ -1,0 +1,53 @@
+
+.nav {
+    background: #3c413f;
+  }
+  
+  .toolbar {
+    width: 1400px;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: px ; */
+    position: relative;
+    padding-left: 3px;
+   
+  }
+  
+  .toolbar h1 {
+    font-size: 20px;
+    line-height: 40px;
+    color: #ffffff;
+    margin-top: 2px;
+  }
+  
+  .toolbar button {
+    background: #ffffff;
+    font-size: 11px;
+    line-height: 38px;
+    font-weight: 600;
+    color: black;
+    border: none;
+    padding: 8px 25px;
+    background: linear-gradient(100deg, #ffd369 , #ffffff 120%);
+    border-radius: 10px;
+    line-height: 18px;
+    margin-right: 11% !important;
+    
+  }
+  .button1{
+    background: #ffffff;
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 500;
+    color: black;
+    border: none;
+    padding: 12px 40px;
+    background: linear-gradient(100deg, #ffd369 , #ffffff 120%);
+    border-radius: 10px;
+    line-height: 18px;
+    margin-left: -60% !important;
+  }
+  
+ 

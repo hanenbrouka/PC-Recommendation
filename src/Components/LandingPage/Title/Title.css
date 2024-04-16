@@ -1,0 +1,34 @@
+
+  .Title h2 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 4rem;
+    line-height: 90px;
+    text-transform: capitalize;
+    color: #f6f6f6;
+    text-align: start;
+  }
+  .titlee{
+    position: absolute;
+    width: 285px;
+    height: 224px;
+    right: 8%;
+    top: -71%;
+    background: linear-gradient(
+      97.26deg,
+      #6946f5 20.98%,
+      #1861ef 58.39%,
+      #29e9af 167.23%
+    );
+    opacity: 0.2;
+    filter: blur(78px);
+    /* transform: matrix(-1, 0, 0, 1, 1, 1); */
+    /* display: none; */
+    display: block;
+  }
+  .Title {
+    position: relative;
+    margin-top: 7rem;
+  }
+  
+

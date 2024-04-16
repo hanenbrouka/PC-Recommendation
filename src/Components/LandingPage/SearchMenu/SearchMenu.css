@@ -1,0 +1,53 @@
+.searchmenu h3 {
+    font-weight: 400;
+    line-height: 74px;
+    letter-spacing: 0.1px;
+    text-transform: capitalize;
+    color: white;
+    margin-top: 4%;
+  }
+ 
+  .budget-input {
+    text-align: center;
+    position: relative;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    width: 3rem;
+    display: inline;
+    margin-right: 0.3rem;
+  }
+  
+  .moneyicon  {
+    display: flex;
+    align-self: flex-start;
+    position: relative;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: white;
+ 
+  }
+  
+ 
+  .budgetrange {
+    background: #3c413f;
+    box-shadow: inset -1px -1px 0px rgba(241, 241, 245, 0.2);
+    border-radius: 10px;
+    width: 95%;
+    margin: 1rem;
+    z-index: 4;
+    margin-left: 0;
+    padding: 1.5em 2.8em 1.5em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 31.75rem;
+    padding-bottom: 1.188rem;
+    margin: 0;
+  }
+ 

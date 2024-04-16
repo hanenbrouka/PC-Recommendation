@@ -1,0 +1,124 @@
+.wrapper { 
+    
+    position: relative;
+    width: 500px;
+    color: #fff;
+  
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, .2) !important; */
+  
+    border-radius: 20px;
+    padding: 20px 60px ;
+    margin-top:2%;
+    margin-bottom: 4%;
+    margin-left: 29.5%;
+    
+    background-color: rgba(60, 65, 63, 1) ;
+
+}
+.login-page{
+    overflow:hidden;
+    position: relative;
+    background-color: rgba(36, 36, 36, 255);
+    /* padding-top: 5%; */
+    /* padding-bottom: 3%; */
+    /* padding-left: 50px; */
+
+   
+}
+
+.wrapper h1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+
+}
+.wrapper .input-box {
+    position: relative;
+    /* width: 100%; */
+    height: 50px;
+    margin:30px 0;
+}
+.input-box input {
+    width: 100%;
+    height: 100%;
+    /* background: transparent; */
+    /* border: 2px solid rgba(255, 255, 255, .2); */
+    /* outline: none; */
+    border-radius: 40px;
+    font-size: 16px;
+    /* color: #fff; */
+    padding: 20px 45px 20px 20px;
+
+}
+
+.input-box .icon {
+    position:absolute;
+    right: 10px;
+    top:18px;
+    transform: translate(-60%);
+    font-size: 15px;
+    color: black;
+
+}
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 10px;
+
+}
+.blue{
+    color: #fff;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+.wrapper button {
+    width:100%;
+    height: 45px;
+    /* background: #fff; */
+    border:none;
+    outline:none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    /* color: #333 ; */
+    font-weight: 700;
+
+
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin:20px 0 15px;
+
+}
+.btn-login  {
+    margin-top: 30px;
+    background: linear-gradient(100deg, #ffd369 , #ffffff 120%);;
+    border: none;
+    /* color: grey !important; */
+}
+
+.btn-signup {
+    margin-top: 30px;
+    background: linear-gradient(100deg, #ffd369 , #ffffff 120%);;
+    border: none;
+    /* color: grey !important; */
+}
+.forgot-page{
+    overflow:hidden;
+    position: relative;
+    background-color: rgba(36, 36, 36, 255);  
+  padding: 100px;
+    /* margin-top: 20px; */
+}
+

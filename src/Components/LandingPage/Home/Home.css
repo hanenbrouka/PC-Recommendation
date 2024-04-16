@@ -1,0 +1,23 @@
+.landing-page-container {
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(36, 36, 36, 255);
+  }
+  
+  .main-landing-page {
+    max-width: 1420px;
+    margin-left: auto;
+    padding-left: 3rem;
+  }
+  .ellipse-circle {
+    position: absolute;
+    width: 872px;
+    top: -31%;
+    left: -29%;
+    height: 872px;
+    background: linear-gradient(140.43deg, #ffd369 13.72%, #ffecbd 83.41%);
+    mix-blend-mode: color-burn;
+    border: 1px solid #000000;
+    border-radius: 50%;
+  }
+ 

@@ -1,0 +1,68 @@
+
+  
+  .background-shapes {
+    padding-left: 42%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: -65% !important;
+
+  
+  }
+  
+
+  .ellipse7{
+     /* background-color: rgb(28, 61, 61);  */
+     /* margin-left:79% ; */
+    height: 500px;
+    width: 288px;
+    margin-top: -4%;
+    position: relative;
+    z-index:1;
+  }
+   .ellipse6{
+    margin-left:75% ;
+    margin-top: -41%;
+    position: absolute;
+
+  } 
+  .ellipse120{
+     padding-left: 15%;
+     display: flex;
+     flex-direction: column;
+    margin-top: -44% !important;
+    height: 700px;
+    width: 440px;
+    margin-left:71% ; 
+   } 
+
+   .ellipse122{
+
+    position: relative;
+    margin-top: -40% !important;
+    height: 800px;
+    width: 480px;
+    margin-left:50% ;
+  } 
+  
+  
+
+  
+  
+  .type{
+    color: aliceblue;
+  }
+  .carousel-container {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin-top: 1.875rem;
+    /* padding: 0 4em; */
+    position: relative;
+    /* position: relative; */
+    width: 50% !important;
+  }
+  
+  .carousel-slide {
+    margin: 0 10px; /* Espacement entre les images */
+  }
