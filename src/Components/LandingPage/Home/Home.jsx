@@ -4,14 +4,8 @@ import { useNavigate } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import SearchMenu from "../SearchMenu/SearchMenu";
 import Title from "../Title/Title";
-import Footer from "../Footer/Footer";
 import Carousel from "../CarouselSection/CarouselSection1";
 
-import SearchBar from "../../SearchPc/SearchBar/SearchBar";
-import SideBar from "../../SearchPc/SideBar/SideBar";
-import PcCard from "../../SearchPc/PcCard/PcCard";
-import PcDetails from "../../PcDetails/PcDetails";
-import Filtre from "../../SearchPc/Filtrage/Filtre";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -33,22 +27,14 @@ const HomePage = () => {
 
   return (
     <section className="landing-page-container">
-      <NavBar />
       <div className="main-landing-page">
         <Title />
         {/* Allow SearchMenu to update the price range */}
         <SearchMenu setValues={setPriceRange} />
-       {/* <PcDetails/> */}
-         {/* <SearchBar/> */}
-       {/* <SideBar/> */}
-       {/* <Filtre/> */}
-      {/* <PcCard/>  */}
-      {/* <PcDetails/> */}
-       
+
         {/* Pass the price range to the CarouselSection for filtering or other purposes */}
-        <Carousel  />
+        <Carousel minPrice={priceRange[0]} maxPrice={priceRange[1]} />
       </div>
-      <Footer />
     </section>
   );
 };

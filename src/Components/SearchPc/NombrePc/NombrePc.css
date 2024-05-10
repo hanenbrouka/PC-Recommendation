@@ -1,7 +1,68 @@
 .resultat{
     color: white;
-    margin-top: -30%;
-    margin-left: 13%;
+    margin-top: 13%;
+    margin-left: 34%;
+    position:absolute;
     font-size: 22px;
     font-weight: 500;
 }
+
+.sort-container {
+    margin-top: 13%;
+    margin-left: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #696974;
+    font-size: 0.9rem;
+    position: absolute;
+  }
+  
+  .sort-container p {
+    color: #92929d;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.00625rem;
+  }
+  .sort-dropdown {
+    position: absolute;
+    display: inline-block;
+    margin-left: 110%;
+    margin-top: -20% !important;
+  }
+  
+  .sort-select {
+    color: #44444f;
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.00625rem;
+    background-color: #242424;
+    border: none;
+  }
+  .sort-select p {
+    color: #92929d;
+    text-align: right;
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.00625rem;
+  }
+  
+  .custom-arrow-icon {
+    position: absolute;
+    right: 0%;
+    top: 46%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #92929d;
+    font-size: 1.5rem;
+  }  

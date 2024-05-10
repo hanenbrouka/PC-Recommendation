@@ -59,7 +59,7 @@ function ForgotPassword () {
     };
   return (
     <div>
-    <NavBar/>
+   
     <div className="forgot-page">
    
     <div className="wrapper">
@@ -88,7 +88,7 @@ function ForgotPassword () {
       </form>
     </div>
     </div>
-    <Footer/>
+  
     </div>
   );
 }

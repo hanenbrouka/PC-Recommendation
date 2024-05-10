@@ -4,11 +4,9 @@ import "./LoginSignUpPage.css";
 import { FaUserTie } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import NavBar from "../LandingPage/NavBar/NavBar";
-import Footer from "../LandingPage/Footer/Footer";
+import axios from "axios";
 
 const SignUp = () => {
- 
   const initialValues = {
     firstName: "",
     lastName: "",
@@ -20,15 +18,20 @@ const SignUp = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const handleChange = (event) => {
+  const handleChange = (e) => {
     // console.log(event.target); //This will print input tag in console if we type anything in input
 
-    const { name, value } = event.target;
+    const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const response = axios
+      .post("http://localhost:5000/user/signup", values)
+      .then((result) => console.log(result))
+      .catch((err) => console.log(err));
+
     setFormErrors(validate(values));
     setIsSubmit(true);
   };
@@ -60,7 +63,7 @@ const SignUp = () => {
     // Password
     if (!vals.password) {
       errors.password = "Password is required";
-    } else if (vals.password.length > 8) {
+    } else if (vals.password.length < 8) {
       errors.password = "Password must be more than 8 characters";
     }
 
@@ -73,85 +76,81 @@ const SignUp = () => {
   };
 
   return (
-    <div className="login-page">
-    <NavBar/>
-    <div className="main-landing-page">
-    <div className="wrapper">
-      <form action="">
-        <h1>Sign Up</h1>
-        <div className="inputs">
-          <div className="input-box">
-            <input
-              type="text"
-              name="firstName"
-              value={values.firstName}
-              placeholder="First Name"
-              onChange={handleChange}
-              required
-            />
-            <FaUserTie className="icon" />
-          </div>
-          <p>{formErrors.firstName}</p>
-          <div className="input-box">
-            <input
-              type="text"
-              name="lastName"
-              value={values.lastName}
-              placeholder="Last Name"
-              onChange={handleChange}
-              required
-            />
-            <FaUserTie className="icon" />
-          </div>
-          <p>{formErrors.lastName}</p>
+    <div className="signup-page">
+      <div className="main-landing-page">
+        <div className="wrapper">
+          <form onSubmit={handleSubmit}>
+            <h1>Sign Up</h1>
+            <div className="inputs">
+              <div className="input-box">
+                <input
+                  type="text"
+                  name="firstName"
+                  value={values.firstName}
+                  placeholder="First Name"
+                  onChange={handleChange}
+                  required
+                />
+                <FaUserTie className="icon" />
+              </div>
+              <p>{formErrors.firstName}</p>
+              <div className="input-box">
+                <input
+                  type="text"
+                  name="lastName"
+                  value={values.lastName}
+                  placeholder="Last Name"
+                  onChange={handleChange}
+                  required
+                />
+                <FaUserTie className="icon" />
+              </div>
+              <p>{formErrors.lastName}</p>
 
-          <div className="input-box">
-            <input
-              type="text"
-              name="email"
-              value={values.email}
-              placeholder="Email"
-              onChange={handleChange}
-              required
-            />
-            <IoIosMail className="icon" />
-          </div>
-          <p>{formErrors.email}</p>
-          <div className="input-box">
-            <input
-              type="password"
-              name="password"
-              value={values.password}
-              placeholder="Passeword"
-              onChange={handleChange}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
-          <p>{formErrors.password}</p>
+              <div className="input-box">
+                <input
+                  type="text"
+                  name="email"
+                  value={values.email}
+                  placeholder="Email"
+                  onChange={handleChange}
+                  required
+                />
+                <IoIosMail className="icon" />
+              </div>
+              <p>{formErrors.email}</p>
+              <div className="input-box">
+                <input
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  placeholder="Password"
+                  onChange={handleChange}
+                  required
+                />
+                <FaLock className="icon" />
+              </div>
+              <p>{formErrors.password}</p>
 
-          <div className="input-box">
-            <input
-              type="password"
-              name="confirmPassword"
-              value={values.confirmPassword}
-              placeholder="Confirm Password"
-              onChange={handleChange}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
+              <div className="input-box">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={values.confirmPassword}
+                  placeholder="Confirm Password"
+                  onChange={handleChange}
+                  required
+                />
+                <FaLock className="icon" />
+              </div>
+            </div>
+
+            <button type="submit" className="btn-signup">
+              Sign Up
+            </button>
+          </form>
         </div>
-
-       
-
-        <button type="submit" className="btn-signup">
-          Sign Up
-        </button>
-      </form>
-    </div>
-    </div>
-    <Footer/>
+      </div>
     </div>
   );
 };

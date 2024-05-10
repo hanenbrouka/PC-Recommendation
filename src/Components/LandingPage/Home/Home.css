@@ -9,15 +9,5 @@
     margin-left: auto;
     padding-left: 3rem;
   }
-  .ellipse-circle {
-    position: absolute;
-    width: 872px;
-    top: -31%;
-    left: -29%;
-    height: 872px;
-    background: linear-gradient(140.43deg, #ffd369 13.72%, #ffecbd 83.41%);
-    mix-blend-mode: color-burn;
-    border: 1px solid #000000;
-    border-radius: 50%;
-  }
+
  

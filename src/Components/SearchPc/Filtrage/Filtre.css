@@ -1,7 +1,22 @@
 
 .title1{
     color:white ;
-    margin-top: 10px;
-    font-size: 20px;
-    font-weight: 400;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 600;
 }
+.chip {
+    
+        font-size: 12px !important; /* Taille de la police de la puce */
+        font-weight: bold !important;
+        height: 25px !important; /* Hauteur de la puce */
+        width: 38px !important;
+        border-radius: 10px;
+        background-color: white !important;
+        position: absolute !important; /* Position absolue par rapport au conteneur parent */
+        margin-top: 10px !important;
+        margin-left: 18% !important;
+      }
+  /* .item{
+    /* margin-top: 2% !important; */
+  /* } */ 

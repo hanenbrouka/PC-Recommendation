@@ -1,0 +1,60 @@
+.details-container {
+ display: flex;
+ margin-top: 3rem;
+ 
+ /* justify-content: space-between; */
+ 
+}
+.side-bar {
+ margin-top: 5% !important;
+ /* width: 25%; */
+ /* Autres styles selon vos besoins */
+}
+
+.main-details-container {
+ width: 73%;
+}
+.main-search{
+ position: relative;
+ margin-left: 8%;
+ margin-top: -3%; /* Compenser le décalage du SideBar */
+}
+.flex-details-container {
+ display: flex;
+ justify-content: space-between;
+}
+.flex-details-1 {
+ flex: 0 0 62%;
+ background: #3c413f;
+ border-radius: 0.8em;
+ padding: 1.5em;
+ color: white;
+ margin-bottom: 2em;
+ display: flex;
+ flex-direction: column;
+ position: relative;
+ gap: 1.5em;
+ margin-left: 3% !important;
+}
+
+.flex-details-2 {
+ flex: 0 0 35%;
+ border-radius: 0.8em;
+ color: white;
+ margin-bottom: 2em;
+ display: flex;
+ flex-direction: column;
+ gap: 1.75em;
+ position: relative;
+}
+.flex-details-2-btn {
+ font-size: 1rem;
+ background-color: #f6f6f6;
+ color: #696974;
+ border: none;
+ font-weight: 700;
+ border-radius: 0.625em;
+ width: 60%;
+ height: 2%;
+ margin-left: 12%;
+}

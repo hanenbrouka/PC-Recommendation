@@ -8,9 +8,7 @@ import NavBar from "../LandingPage/NavBar/NavBar";
 import Footer from "../LandingPage/Footer/Footer";
 
 const ResetPassword = () => {
- 
   const initialValues = {
-  
     password: "",
     confirmPassword: "",
   };
@@ -41,8 +39,6 @@ const ResetPassword = () => {
   const validate = (vals) => {
     const errors = {};
 
-  
-
     // Password
     if (!vals.password) {
       errors.password = "Password is required";
@@ -60,52 +56,43 @@ const ResetPassword = () => {
 
   return (
     <div className="login-page">
-    <NavBar/>
-    <div className="main-landing-page">
-    <div className="wrapper">
-      <form action="">
-        <h1>Change Password</h1>
-        <div className="inputs">
-         
-    
-           
+      <div className="main-landing-page">
+        <div className="wrapper">
+          <form action="">
+            <h1>Change The Password</h1>
+            <div className="inputs">
+              <div className="input-box">
+                <input
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  placeholder="Password"
+                  onChange={handleChange}
+                  required
+                />
+                <FaLock className="icon" />
+              </div>
+              <p>{formErrors.password}</p>
 
-      
-          <div className="input-box">
-            <input
-              type="password"
-              name="password"
-              value={values.password}
-              placeholder="Password"
-              onChange={handleChange}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
-          <p>{formErrors.password}</p>
+              <div className="input-box">
+                <input
+                  type="password"
+                  name="confirmPassword"
+                  value={values.confirmPassword}
+                  placeholder="Confirm Password"
+                  onChange={handleChange}
+                  required
+                />
+                <FaLock className="icon" />
+              </div>
+            </div>
 
-          <div className="input-box">
-            <input
-              type="password"
-              name="confirmPassword"
-              value={values.confirmPassword}
-              placeholder="Confirm Password"
-              onChange={handleChange}
-              required
-            />
-            <FaLock className="icon" />
-          </div>
+            <button type="submit" className="btn-signup">
+              Reset Password
+            </button>
+          </form>
         </div>
-
-       
-
-        <button type="submit" className="btn-signup">
-          Reset Password
-        </button>
-      </form>
-    </div>
-    </div>
-    <Footer/>
+      </div>
     </div>
   );
 };

@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import "../AuthPage/LoginSignUpPage.css";
 import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import NavBar from "../LandingPage/NavBar/NavBar";
-import Footer from "../LandingPage/Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login() {
-    const navigate = useNavigate();
-  const handleSignUpSubmit= () => {
+  const navigate = useNavigate();
+  const handleSignSubmit= () => {
     navigate("/signup");
+  };
+  const handleProfilSubmit= () => {
+    navigate("/user-profil");
   };
     const initialValues = {
      
@@ -21,15 +23,19 @@ function Login() {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
   
-    const handleChange = (event) => {
-      // console.log(event.target); //This will print input tag in console if we type anything in input
-  
-      const { name, value } = event.target;
+    const handleChange = (e) => {  
+      const { name, value } = e.target;
       setValues({ ...values, [name]: value });
     };
   
-    const handleSubmit = (event) => {
-      event.preventDefault();
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const response =  axios.post('http://localhost:5000/user/login',values)
+      .then(result => {
+        if (result.data === "sucess")
+        navigate('/signup')
+      })
+        .catch(err => console.log(err))
       setFormErrors(validate(values));
       setIsSubmit(true);
     };
@@ -56,7 +62,7 @@ function Login() {
       // Password
       if (!vals.password) {
         errors.password = "Password is required";
-      } else if (vals.password.length > 8) {
+      } else if (vals.password.length < 8) {
         errors.password = "Password must be more than 8 characters";
       }
   
@@ -65,11 +71,11 @@ function Login() {
     };
   return (
     <div>
-    <NavBar/>
+   
     <div className="login-page">
    
     <div className="wrapper">
-      <form>
+      <form onChange={handleSubmit}>
         <h1>Login</h1>
         <div className="inputs">
           <div className="input-box">
@@ -112,13 +118,13 @@ function Login() {
         <button type="submit" className="btn-login">
           Login
         </button>
-        <button type="submit" className="btn-signup"  onClick={() =>navigate('/signup')}>
+        <button type="submit" className="btn-signup"  onClick={handleSignSubmit}>
           Sign UP
         </button>
       </form>
     </div>
     </div>
-    <Footer/>
+  
     </div>
   );
 }

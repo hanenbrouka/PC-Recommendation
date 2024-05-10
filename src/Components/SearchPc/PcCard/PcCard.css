@@ -3,7 +3,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     margin-left: 20%;
-    margin-top: -15%;
+    margin-top: -77% !important;
+    position: relative;
 }
 
 .container2 {
@@ -62,7 +63,8 @@
     font-family: Poppins;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
 }
 
 .card-type {
@@ -103,3 +105,24 @@
     display: flex;
     margin-right: 10%;
 }
+.aaa{
+    padding: 3%;
+    margin: 30%;
+    margin-top: 6%;
+    
+}
+.container-card .box .container1 .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-gap: 20px; /* Espacement entre les colonnes */
+  }
+  
+  /* Style pour chaque carte */
+  .container-card .box .container1 .row .card {
+    /* Ajoutez vos styles de carte ici */
+    margin-bottom: 10px; /* Espacement en bas de chaque carte */
+  }
+  .bbb{
+    margin-left: 15%;
+    font-size: 25px;
+  }

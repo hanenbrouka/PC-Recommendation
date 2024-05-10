@@ -1,492 +1,196 @@
-.details-container {
-    display: flex;
-    margin-top: 3rem;
-    justify-content: space-between;
-  }
-  
-  .main-details-container {
-    width: 73%;
-  }
-  
-  .flex-details-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flex-details-1 {
-    flex: 0 0 62%;
-    background: #3c413f;
-    border-radius: 0.8em;
-    padding: 1.5em;
-    color: white;
-    margin-bottom: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-  }
-  
-  .flex-details-2 {
-    flex: 0 0 35%;
-    border-radius: 0.8em;
-    color: white;
-    margin-bottom: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 1.75em;
-    position: relative;
-  }
-  
-  .flex-details-1-price {
-    display: flex;
-    justify-content: flex-end;
-    gap: 0.2em;
-  }
-  
-  .PC-detail-price {
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
-  
-  .PC-detail-currency {
-    font-size: 0.75rem;
-    align-self: baseline;
-  }
-  
-  .flex-details-1-icon {
-    display: flex;
-  }
-  
-  .flex-details-1-name-icon {
-    display: flex;
-    justify-content: space-between;
-  }
-  .flex-details-1-name {
-    font-size: 1.625rem;
-    font-weight: 600;
-    width: 75%;
-    color: #f1f1f5;
-    font-family: Poppins;
-    font-size: 1.625rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 2.25rem;
-    letter-spacing: 0.00625rem;
-  }
-  .PC-detail-icon1,
-  .PC-detail-icon2 {
-    font-weight: 700;
-    color: #ffd369;
-    font-size: 1.2rem;
-    padding: 0.4em;
-    padding-bottom: 0.6em;
-    border: 1px solid #ffd369;
-    height: 2.2rem;
-    border-radius: 10px;
-  }
-  
-  .PC-detail-icon2 {
-    color: white;
-    border: 1px solid white;
-  }
-  
-  .flex-details-1-icon {
-    gap: 1em;
-  }
-  
-  .flex-details-1-marque-category {
-    font-size: 0.925rem;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .flex-details-1-marque {
-    display: flex;
-    gap: 0.4em;
-  }
-  
-  .flex-details-1-category {
-    display: flex;
-    gap: 0.5em;
-  }
-  
-  .PC-detail-marque-point,
-  .PC-detail-category-point {
-    font-size: 0.675rem;
-    align-self: center;
-  }
-  
-  .PC-detail-stock-icon {
-    color: #3dd598;
-    font-size: 1rem;
-    align-self: center;
-  }
-  
-  .flex-details-marque,
-  .flex-details-category {
-    font-weight: 600;
-    color: #fff2d2;
-  }
-  
-  .flex-details-1-pc-features {
-    font-size: 0.75rem;
-    display: flex;
-  }
-  .bold-features {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #fff2d2;
-    margin-top: 0.7em;
-  }
-  .flex-pc-features1,
-  .flex-pc-features2,
-  .flex-pc-features3,
-  .flex-pc-features4 {
-    flex-shrink: 1;
-    flex-grow: 1;
-  
-    border: 1px solid white;
-    padding-top: 1.5em;
-    padding-bottom: 1.2em;
-    padding-left: 1.5em;
-  }
-  .flex-pc-features1 {
-    border-top-left-radius: 0.8em;
-    border-bottom-left-radius: 0.8em;
-  }
-  .flex-pc-features4 {
-    border-top-right-radius: 0.8em;
-    border-bottom-right-radius: 0.8em;
-  }
-  
-  .overview-title {
-    font-weight: 600;
-    margin-bottom: 1em;
-  }
-  
-  .overview-content {
-    font-size: 0.875rem;
-  }
-  
-  .flex-details-1-fiche-Technique {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    padding-bottom: 1.5em;
-    border-bottom: 1px solid white;
-  }
-  
-  .fiche-Technique-Name {
-    font-weight: 600;
-  }
-  
-  .pc-description-circle {
-    width: 1rem;
-    height: 1rem;
-    border: 3px solid #3dd598;
-    font-size: 0.925rem;
-  
-    border-radius: 50%;
-    background-color: #3c413f;
-    align-self: center;
-  }
-  
-  .pc-description-flex {
-    display: flex;
-    gap: 0.7em;
-  }
-  
-  .pc-description-flex p {
-    font-size: 0.875rem;
-  }
-  
-  .flex-details-2-info {
-    display: flex;
-    justify-content: space-between;
-    background-color: #3c413f;
-    padding: 1.3em 1em;
-    border-radius: 0.625em;
-  }
-  
-  .flex-group-1 {
-    display: flex;
-    gap: 1em;
-  }
-  
-  .PC-detail-2-pc-Name {
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-  .flex-details-2-img {
-    width: 3rem;
-    height: 3rem;
-  }
-  
-  .PC-detail-2-pc-Marque,
-  .PC-detail-2-pc-view {
-    font-size: 0.75rem;
-  }
-  
-  .PC-detail-2-pc-view {
-    font-weight: 600;
-    padding: 0.35em 1em;
-    border-radius: 0.4rem;
-    background-color: #f6f6f6;
-    color: #3c413f;
-  }
-  
-  .flex-details-2-view {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6em;
-  }
-  
-  .PC-detail-2-pc-icon {
-    font-size: 1.1rem;
-    align-self: center;
-  }
-  
-  .PC-detail-2-pc-icon-view {
-    display: flex;
-    gap: 0.8em;
-  }
-  
-  .flex-details-2-price {
-    font-size: 0.875rem;
-    font-weight: 600;
-  }
-  .flex-details-2-tnd {
-    font-size: 0.625rem;
-  }
-  
-  .flex-group-2 {
-    display: flex;
-    gap: 0.25em;
-  }
-  
-  .flex-details-2-btn {
-    font-size: 0.75rem;
-    background-color: #f6f6f6;
-    color: #696974;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.65em;
-    padding: 0.875em 0;
-  }
-  
-  .flex-details-1-Interested-btn {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .flex-details-1-Interested {
-    font-weight: 600;
-    align-self: center;
-  }
-  
-  .flex-details-1-btn {
-    font-size: 0.75rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 0.7em;
-    padding: 0.875em 2.8em;
-    background: #ffd369;
-  }
-  
-  .detail-line-1,
-  .detail-line-2,
-  .detail-line-3,
-  .detail-line-4 {
-    position: absolute;
-    z-index: -1;
-  }
-  
-  .detail-line-1 {
-    left: 10%;
-  }
-  .detail-line-2 {
-    left: 16%;
-  }
-  
-  .detail-line-3 {
-    left: 22%;
-  }
-  .detail-line-4 {
-    left: 28%;
-  }
-  
-  @media screen and (max-width: 1300px) {
-    .flex-details-container {
-      flex-direction: column;
-    }
-  
-    .flex-details-2-info {
-      flex: 0 1 45%;
-    }
-  
-    .flex-details-2 {
-      justify-content: space-between;
-  
-      border-radius: 0.8em;
-      color: white;
-      margin-bottom: 2em;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  
-    .flex-details-2-btn {
-      font-size: 0.875rem;
-      padding: 0.875em 0;
-      width: 38%;
-      margin: 0 auto;
-    }
-  }
-  
-  @media screen and (max-width: 1180px) {
-    .flex-group-1 {
-      font-size: 0.8rem;
-    }
-    .PC-detail-2-pc-Name,
-    .flex-details-2-price {
-      font-size: 0.775rem;
-    }
-  }
-  
-  @media screen and (max-width: 1000px) {
-    .details-container {
-      display: flex;
-      flex-direction: column;
-      margin-top: 3rem;
-      justify-content: space-between;
-    }
-  
-    .main-details-container {
-      width: 100%;
-    }
-  }
-  
-  @media screen and (max-width: 750px) {
-    .flex-details-2-info {
-      flex: 0 1 47%;
-    }
-    .PC-detail-2-pc-Name,
-    .flex-details-2-price {
-      font-size: 0.675rem;
-    }
-  }
-  
-  @media screen and (max-width: 700px) {
-    .flex-details-marque,
-    .flex-details-category,
-    .PC-detail-stock,
-    .PC-detail-category-icon {
-      font-size: 0.8rem;
-    }
-    .flex-details-2-info {
-      flex: 0 1 100%;
-    }
-    .PC-detail-2-pc-Name,
-    .flex-details-2-price {
-      font-size: 0.875rem;
-    }
-  
-    .flex-group-1 {
-      font-size: 1rem;
-    }
-  
-    .details-container {
-      flex-direction: row;
-    }
-  
-    .main-details-container {
-      width: 65%;
-    }
-  
-    .flex-details-container {
-      font-size: 0.75em;
-    }
-  
-    .flex-details-1-name {
-      font-size: 1.325rem;
-      font-weight: 600;
-    }
-  
-    .PC-detail-icon1,
-    .PC-detail-icon2 {
-      font-size: 1rem;
-      padding: 0.3em;
-      height: 1.8rem;
-  
-      border-radius: 8px;
-    }
-  
-    .flex-details-1-marque-category {
-      min-width: 300px;
-      flex-direction: column;
-    }
-  
-    .flex-details-1-pc-features {
-      font-size: 0.75rem;
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .flex-pc-features4 {
-      border-radius: 0.6em;
-      margin-top: 1em;
-    }
-    .bold-features {
-      font-size: 0.75rem;
-    }
-    .flex-pc-features1,
-    .flex-pc-features2,
-    .flex-pc-features3,
-    .flex-pc-features4 {
-      padding-top: 1em;
-      border-radius: 0;
-    }
-  }
-  
-  @media screen and (max-width: 603px) {
-    .details-container {
-      flex-direction: column;
-    }
-  
-    .main-details-container {
-      width: 100%;
-    }
-  
-    .flex-pc-features4 {
-      margin-top: 0;
-    }
-  
-    .flex-pc-features1,
-    .flex-pc-features2,
-    .flex-pc-features3,
-    .flex-pc-features4 {
-      padding-top: 1em;
-      padding-left: 1em;
-      border-radius: 0;
-    }
-    .overview-title,
-    .fiche-Technique-Name,
-    .flex-details-1-Interested {
-      font-size: 0.9rem;
-    }
-    .flex-details-1-fiche-Technique {
-      gap: 1.5em;
-    }
-  }
-  
-  @media screen and (max-width: 483px) {
-    .flex-pc-features1,
-    .flex-pc-features2,
-    .flex-pc-features3,
-    .flex-pc-features4 {
-      padding-top: 1em;
-      padding-left: 1em;
-      border-radius: 0;
-    }
-    .flex-details-1-pc-features {
-      font-size: 0.6rem;
-    }
-  }
+.flex-details-1-price {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.2em ;
+
+}
+.flex-details-1 {
+  flex:  42%;
+  background: #3c413f;
+  border-radius: 0.8em;
+  padding: 1.5em;
+  color: white;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 1.5em;
+  margin-left: 0%;
+}
+.images-detail-1{
+  width: 40%;
+  /* justify-items: center !important; */
+}
+.PC-detail-price {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.PC-detail-currency {
+  font-size: 0.75rem;
+  align-self: baseline;
+}
+
+.flex-details-1-icon {
+  display: flex;
+  /* margin-top: 1%; */
+  /* padding-top: %; */
+  /* justify-content: center; */
+}
+
+.flex-details-1-name-icon {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-details-1-name {
+  font-size: 1.625rem;
+  font-weight: 600;
+  width: 75%;
+  color: #f1f1f5;
+  font-family: Poppins;
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.25rem;
+  letter-spacing: 0.00625rem;
+}
+.PC-detail-icon1,
+.PC-detail-icon2 {
+  font-weight: 700;
+  color: #ffd369;
+  font-size: 1.2rem;
+  padding: 0.4em;
+  padding-bottom: 0.6em;
+  border: 1px solid #ffd369;
+  height: 2.2rem;
+  border-radius: 10px;
+}
+
+.PC-detail-icon2 {
+  color: white;
+  border: 1px solid white;
+}
+
+.flex-details-1-icon {
+  gap: 1em;
+}
+.flex-details-1-marque-category {
+  font-size: 0.925rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-details-1-marque {
+  display: flex;
+  gap: 0.4em;
+}
+
+.flex-details-1-category {
+  display: flex;
+  gap: 0.5em;
+}
+
+.PC-detail-marque-point,
+.PC-detail-category-point {
+  font-size: 0.675rem;
+  align-self: center;
+}
+.PC-detail-stock-icon {
+  color: #3dd598;
+  font-size: 1rem;
+  align-self: center;
+}
+
+.flex-details-marque,
+.flex-details-category {
+  font-weight: 600;
+  color: #fff2d2;
+}
+
+.flex-details-1-pc-features {
+  font-size: 0.75rem;
+  display: flex;
+}
+.bold-features {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff2d2;
+  margin-top: 0.7em;
+}
+.flex-pc-features1,
+.flex-pc-features2,
+.flex-pc-features3,
+.flex-pc-features4 {
+  flex-shrink: 1;
+  flex-grow: 1;
+  border: 1px solid white;
+  padding-top: 1.5em;
+  padding-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+.flex-pc-features1 {
+  border-top-left-radius: 0.8em;
+  border-bottom-left-radius: 0.8em;
+}
+.flex-pc-features4 {
+  border-top-right-radius: 0.8em;
+  border-bottom-right-radius: 0.8em;
+}
+
+.overview-title {
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.overview-content {
+  font-size: 0.875rem;
+}
+.flex-details-1-fiche-Technique {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid white;
+}
+
+.fiche-Technique-Name {
+  font-weight: 600;
+}
+
+.pc-description-circle {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid #3dd598;
+  font-size: 0.925rem;
+
+  border-radius: 50%;
+  background-color: #3c413f;
+  align-self: center;
+}
+.pc-description-flex {
+  display: flex;
+  gap: 0.7em;
+}
+
+.pc-description-flex p {
+  font-size: 0.875rem;
+}
+.flex-details-1-Interested-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-details-1-Interested {
+  font-weight: 600;
+  align-self: center;
+}
+
+.flex-details-1-btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.7em;
+  padding: 0.875em 2.8em;
+  background: #ffd369;
+}
+
+

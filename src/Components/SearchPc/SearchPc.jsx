@@ -1,18 +1,16 @@
 import React from "react";
 import "../SearchPc/SearchPc.css";
-import NavBar from "../LandingPage/NavBar/NavBar";
-import Footer from "../LandingPage/Footer/Footer";
+
 import SideBar from "../SearchPc/SideBar/SideBar";
 import SearchBar from "./SearchBar/SearchBar";
 
 import PcCard from "./PcCard/PcCard";
+import NombrePc from './NombrePc/NombrePc';
 
 function SearchPc() {
   return (
     <div className="search-page-container">
-      <div>
-        <NavBar />
-      </div>
+    <NombrePc/>
       <div className="main-search-page">
         <SearchBar />
         <div>
@@ -20,9 +18,7 @@ function SearchPc() {
         </div>
         <PcCard />
       </div>
-      <div>
-        <Footer />
-      </div>
+    
     </div>
   );
 }

@@ -50,4 +50,19 @@
     margin-left: -60% !important;
   }
   
- 
+  /* @media screen and (max-width: 1248px) {
+    .toolbar {
+      width: 100%;
+    }
+    .toolbar button {
+      margin-right: 2rem;
+    }}
+    @media screen and (max-width: 900px) {
+      .toolbar button {
+        display: none;
+      }
+    
+      .main-Title h2 {
+        font-size: 3.5rem !important;
+      }
+    } */

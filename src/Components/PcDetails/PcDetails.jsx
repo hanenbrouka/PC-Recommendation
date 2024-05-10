@@ -1,10 +1,11 @@
 import React from 'react';
 import '../PcDetails/PcDetails.css';
-import imageGroup from '../LandingPage/Image/image-group.png'
-import { BiBookmark } from 'react-icons/bi'
+import image from '../LandingPage/Image/gamer.jpeg'
+import { GrFavorite } from "react-icons/gr";
 import { FiShare2 } from 'react-icons/fi'
 import { TbPointFilled } from 'react-icons/tb'
 import { AiOutlineFileDone } from 'react-icons/ai'
+
 
 
 
@@ -34,33 +35,34 @@ function PcDetails() {
     },
   ]
   const ficheTechniqueData = [
-    { label: 'Marque', value: laptopInfo.brand },
-    { label: 'Processeur', value: laptopInfo.CPU },
-    { label: 'Mémoire', value: laptopInfo.Ram },
+    { label: 'Marque', value: 'DELL' },
+    { label: 'Processeur', value: 'Intel® Core™ i7-12700H' },
+    { label: 'Mémoire', value: '24 Go' },
     {
       label: 'fréquence processeur',
       value:
         '3,3 GHz up to 4.5 GHz Turbo max, 16 Mo de mémoire cache, Hexa-Core',
     },
-    { label: 'Résolution Ecran', value: laptopInfo.Resolution },
+    { label: 'Résolution Ecran', value: '1920 x 1080 pixels' },
     { label: 'Type Processeur', value: 'Dual Core' },
-    { label: 'Carte Graphique', value: laptopInfo.GPU },
+    { label: 'Carte Graphique', value: 'GeForce RTX 3050'},
     { label: 'Garantie', value: '1ans' },
   ]
 
   return (
-    <div>
+    <div className='flex-details-1 '>
     
       <div className="flex-details-1-price">
-        <p className="PC-detail-price">{laptopInfo.Price}</p>
+      
+        <p className="PC-detail-price">3149.0</p>
         <p className="PC-detail-currency">TND</p>
       </div>
-      <img src={imageGroup} className="images-detail-1" />
+      <img src={image} className="images-detail-1" alt="#" />
       <div className="flex-details-1-name-icon">
-        <p className="flex-details-1-name">{laptopInfo.Name}</p>
+        <p className="flex-details-1-name">PC Portable Gamer DELL 5520 G15 i7 12è Gén 24Go RTX 3050</p>
         <div className="flex-details-1-icon">
           <span className="PC-detail-icon1">
-            <BiBookmark />
+            <GrFavorite />
           </span>
           <p className="PC-detail-icon2">
             <FiShare2 />
@@ -90,11 +92,11 @@ function PcDetails() {
       <div className="flex-details-1-pc-features">
         <div className="flex-pc-features1">
           <p>Ecran</p>
-          <p className="bold-features">{laptopInfo.Display}</p>
+          <p className="bold-features"> 15.6 FULL HD</p>
         </div>
         <div className="flex-pc-features2">
           <p>Processeur</p>
-          <p className="bold-features">{laptopInfo.CPU}</p>
+          <p className="bold-features">Intel Core i7-12700H</p>
         </div>
         <div className="flex-pc-features3">
           <p>Mémoire RAM</p>
@@ -107,7 +109,9 @@ function PcDetails() {
       </div>
       <div className="flex-details-1-overview">
         <p className="overview-title">Overview </p>
-        <p className="overview-content">{laptopInfo.Description}</p>
+        <p className="overview-content">'Écran 15.6" FULL HD, 120HZ-Processeur:Intel Core i7-12700H(Up to 4,70 GHz Turbo max, 24Mode mémoire cache, 14-Cores) - Système d\'exploitation: Windows 10 Pro- Mémoire RAM: 24 Go DDR5-4800 MHz- Disque Dur: 512 Go SSD- Carte Graphique: NVIDIA GeForce RTX3050 (4Go de mémoire dédiée GDDR6) avec Wi-Fi, Bluetooth, 3x USB 3.2 Gen 1, 1x USB-C avec DisplayPort, 1x HDMI 2.1, 1x RJ45, 1 Casque/microphone - Clavier Rétroéclairé Avec Pavé Numérique - Couleur: Noir - Garantie: 1 an Retrait en Magasin ou Livraison Gratuite pour Cet Article',
+      Display: '15.6 Pouces',
+      GPU: 'GeForce RTX 3050'</p>
       </div>
       <div className="flex-details-1-fiche-Technique">
         <p className="fiche-Technique-Name">Fiche Technique</p>
@@ -133,4 +137,4 @@ function PcDetails() {
   )
 }
 
-export default PcDetails
+export default PcDetails;
