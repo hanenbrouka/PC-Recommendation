@@ -5,6 +5,8 @@ import { FaUserTie } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import axios from "axios";
+import useSignup from "../../Data/useSignup";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const initialValues = {
@@ -17,6 +19,8 @@ const SignUp = () => {
   const [values, setValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const signup = useSignup();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     // console.log(event.target); //This will print input tag in console if we type anything in input
@@ -27,11 +31,15 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const response = axios
-      .post("http://localhost:5000/user/signup", values)
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
 
+    signup.mutate(values, {
+      onSuccess() {
+        navigate("/");
+      },
+      onError(error) {
+        console.log(error);
+      },
+    });
     setFormErrors(validate(values));
     setIsSubmit(true);
   };

@@ -260,18 +260,19 @@ carousel-item4 {
 
    .ellipse7{
     /* background-color: rgb(28, 61, 61);   */
-    margin-left: 80% ;
-    /* height: 500px; */
-    /* width: 200px; */
+    margin-left: 90% ;
+    height: 500px;
+    width: 200px;
     margin-top: -40%;
     position: auto;
     /* z-index: index 4; */
   } 
    .ellipse6{
-    margin-left:70% ;
+    margin-left:85% ;
     margin-top: -30%;
     position: auto;
     padding-top: -30% ;
+    
   
 
     

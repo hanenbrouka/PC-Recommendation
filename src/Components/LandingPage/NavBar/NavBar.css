@@ -66,3 +66,12 @@
         font-size: 3.5rem !important;
       }
     } */
+
+ 
+  .btnUser {
+    margin-right: 10% !important;
+    display: flex !important;
+    align-items:center !important;
+    padding: 5% 50px !important;
+    margin-left: -90% !important;
+  }

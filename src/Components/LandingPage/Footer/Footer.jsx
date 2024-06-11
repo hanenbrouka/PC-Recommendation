@@ -15,8 +15,8 @@ const Footer = () => {
             <h3>PC Recommendation</h3>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-              nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            Our website's main aim is to aid you in finding the optimal PC that aligns with your needs.
+             By conveniently filtering your search according to your budgetary preferences, you can discover the ideal computer at a reasonable price.
             </p>
             <div className="footericons">
               <div className="icons">
@@ -35,27 +35,29 @@ const Footer = () => {
               </div>
             </div>
             <p className="copyright">
-              Copyrigh © {new Date().getFullYear()} Envast. All rights
+              Copyright © {new Date().getFullYear()} Envast. All rights
             </p>
           </div>
-          <div className="Presources">
+          <div className="PPresources">
             <div className="resourcess">
-              <p className="Presources">Resource</p>
+              <p className="ppp">Resource</p>
 
               <p>
-                <a href="#">Blogs</a>
+                <a  className="vvv" href="#">Blogs</a>
               </p>
               <p>
-                <a href="#">Help and Center</a>
+                <a  className="vvv"  href="#">Help and Center</a>
               </p>
               <p>
-                <a href="#">FaQs</a>
+                <a  className="vvv"  href="#">FaQs</a>
               </p>
+            </div>
             </div>
             <div className="subscribe">
               <h4>Subscribe Us</h4>
               <p>
-                Signup for our newsletter to get the latest news in your inbox.
+                Signup for our newsletter to get the 
+                latest news in your inbox.
               </p>
               <form action="#">
                 <div className="input1">
@@ -71,7 +73,7 @@ const Footer = () => {
               </form>
             </div>
           </div>
-        </div>
+      
       </footer>
     
   );

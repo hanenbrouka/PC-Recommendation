@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     margin-left: 20%;
-    margin-top: -77% !important;
+    margin-top: -67% !important;
     position: relative;
 }
 
@@ -91,7 +91,7 @@
 
 .card-title p {
     color: #f6f6f6;
-    font-size: 1rem;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.00625rem;
 }
@@ -125,4 +125,5 @@
   .bbb{
     margin-left: 15%;
     font-size: 25px;
+    cursor: pointer;
   }

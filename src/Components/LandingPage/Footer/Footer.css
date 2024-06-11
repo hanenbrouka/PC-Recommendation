@@ -1,8 +1,8 @@
 
 .footer {
-    padding: 10px 25px  ;
+    padding: 15px 26px  ;
     width: 100%;
-    /* height: 20% ; */
+    height: 50% ;
     position: absolute;
     background-color: #282828;
     color: white;
@@ -101,7 +101,9 @@
   .subscribe {
     text-align: start;
     width: 46%;
-    margin-right: 10px;
+    /* margin-right: 30%; */
+    margin-left: -4%;
+    margin-top: 2%;
   }
   
   .subscribe button {
@@ -155,30 +157,50 @@
     margin-right: 170px;
     
   }
-  
+  .Prresources{
+     flex: 1 1 auto;
+    
+     align-self: center;
+     justify-content: flex-start;
+     position: relative;
+     margin-right: 150px;
+     color:  #fff;
+   
+  }
+  .ppp{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: -100%;
+    margin-top: -5%;
+  }
   .resourcess {
     display: flex;
     flex-direction: column;
     text-align: start;
     
   }
-  
-  .resourcess a {
+.PPresources{
+      /* flex: 1 1 auto; */
+      display: flex;
+      align-self: center;
+      /* justify-content: flex-start; */
+      /* width: 30%; */
+      margin-right: 170px;
+      margin-top: -5%;
+}
+  .vvv {
     color: #b9b8bb;
     /* Caption 01 */
     font-size: 0.875rem;
     line-height: 20px;
     text-transform: capitalize;
     text-decoration: none;
-    margin-left: -30px ;
+    margin-left: -90px ;
+    margin-bottom: -3% !important;
   }
   
-  .resourcess .Presources{
-    color:  #fff;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 24px;
-  }
+ 
   
  
   

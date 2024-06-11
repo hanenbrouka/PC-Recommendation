@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../AuthPage/LoginSignUpPage.css";
-import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import NavBar from "../LandingPage/NavBar/NavBar";
-import Footer from "../LandingPage/Footer/Footer";
+
 import { useNavigate } from "react-router-dom";
 
 function ForgotPassword () {

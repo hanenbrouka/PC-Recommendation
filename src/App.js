@@ -11,6 +11,7 @@ import ResetPassword from "./Components/AuthPage/ResetPassword";
 import NavBar from "./Components/LandingPage/NavBar/NavBar";
 import Footer from "./Components/LandingPage/Footer/Footer";
 import ProfilUser from "./Components/ProfilUser/profilUser";
+import FavoritesList from "../src/Components/ProfilUser/FavorisListe";
 // import CarouselSection from './Components/LandingPage/CarouselSection/CarouselSection';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/user-profil" element={<ProfilUser />} />
+          <Route path="/favorite-liste" element={<FavoritesList />} />
         </Routes>
         <Footer />
       </BrowserRouter>

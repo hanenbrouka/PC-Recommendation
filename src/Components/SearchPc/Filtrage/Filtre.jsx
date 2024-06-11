@@ -5,19 +5,18 @@ import FilterItem from "./FilterItem";
 
 function Filtre() {
   let category = [
-    { name: "PC Portable", id: 4 },
-    { name: "Gamer", id: 1 },
-    { name: "PC Portable PRO", id: 2 },
-    { name: "Mac", id: 5 },
+    { name: "Laptops", id: 4 },
+    { name: "Gaming", id: 1 },
+    { name: "Laptops PRO", id: 2 },
     { name: "UltraBook", id: 3 },
   ];
   let salary = [
-    { priceRange: "0 TND - 100 TND", id: 1 },
-    { priceRange: "101 TND - 200 TND", id: 2 },
-    { priceRange: "201 TND - 500 TND", id: 3 },
-    { priceRange: "501 TND - 750 TND", id: 4 },
-    { priceRange: "751 TND - 1000 TND", id: 5 },
-    { priceRange: "+1000 TND", id: 6 },
+    { priceRange: "500 TND - 1000 TND", id: 1 },
+    { priceRange: "1500 TND - 2000 TND", id: 2 },
+    { priceRange: "2500 TND - 3000 TND", id: 3 },
+    { priceRange: "3500 TND - 4000 TND", id: 4 },
+    { priceRange: "4500 TND - 5000 TND", id: 5 },
+    { priceRange: "+5000 TND", id: 6 },
   ];
 
   return (
@@ -39,15 +38,7 @@ function Filtre() {
           </div>
         ))}
       </div>
-      <div>
-        <p className="title1">Website</p>
-
-        <div className="mb-3">
-          <Form.Check // prettier-ignore
-            type="checkbox"
-          />
-        </div>
-      </div>
+      
     </Form>
   );
 }

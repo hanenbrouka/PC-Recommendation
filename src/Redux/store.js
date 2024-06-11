@@ -1,10 +1,15 @@
-// store.js
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers'; // Importez le rootReducer
+// // store.js
 
-const store = configureStore({
-  reducer: rootReducer,
-  // Autres options comme le middleware, etc. peuvent être ajoutées ici
-});
+// import { configureStore } from '@reduxjs/toolkit'
+// import favoriteReducer from '../Redux/slices/favorite.slice';
+// import authReducer from '../Redux/slices/auth.slices'
 
-export default store;
+
+// const store = configureStore({
+//   reducer: {
+//     favorites: favoriteReducer,
+//     auth: authReducer,
+//   },
+// });
+
+// export default store;

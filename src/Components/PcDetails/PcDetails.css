@@ -61,7 +61,7 @@
   padding: 0.4em;
   padding-bottom: 0.6em;
   border: 1px solid #ffd369;
-  height: 2.2rem;
+  height: 2.5em;
   border-radius: 10px;
 }
 
@@ -71,11 +71,12 @@
 }
 
 .flex-details-1-icon {
-  gap: 1em;
+  gap: 0.5em;
+  margin-top: -15%;
 }
 .flex-details-1-marque-category {
-  font-size: 0.925rem;
-  display: flex;
+  font-size: 0.9rem;
+  display: flex ;
   justify-content: space-between;
 }
 

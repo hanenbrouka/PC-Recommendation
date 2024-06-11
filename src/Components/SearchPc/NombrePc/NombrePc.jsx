@@ -17,7 +17,7 @@ function NombrePc() {
   return (
     <div>
     <div className='resultat' >
-        <p>Showing 125 Laptops</p>
+        <p>Showing 15 Laptops</p>
         </div>
         <div className="sort-container">
         <p>Sort by:</p>

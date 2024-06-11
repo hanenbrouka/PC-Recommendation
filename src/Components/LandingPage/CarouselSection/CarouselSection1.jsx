@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
 import img1 from "../Image/pro.jpeg";
 import img2 from "../Image/ultra.jpeg";
 import img3 from "../Image/portable.jpeg";
-import img4 from "../Image/maac.jpeg";
+// import img4 from "../Image/maac.jpeg";
 import img5 from "../Image/gamer.jpeg";
 import "../CarouselSection/CarouselSection.css";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
@@ -12,8 +11,6 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import background from "../Image/man-tshirt-looking-laptop-display-with-big-eyes-shocked-with-content-covered-mouth-with-palm 1 (2).png";
 import ellipse6 from "../Image/Ellipse 6.png";
 import ellipse7 from "../Image/Ellipse 7.png";
-import ellipse121 from "../Image/Ellipse 121.png";
-import ellipse120 from "../Image/Ellipse 120.png";
 
 // CarouselSection component definition
 const CarouselSection = ({ minPrice, maxPrice }) => {
@@ -22,9 +19,7 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
     { image: img5, alt: "computer type", text: "Gaming", id: 1 },
     { image: img1, alt: "computer type", text: "Laptop Pro", id: 2 },
     { image: img2, alt: "computer type", text: "Ultrabook", id: 3 },
-    { image: img3, alt: "computer type", text: "Laptop", id: 4},
-    { image: img4, alt: "computer type", text:  "Mac", id: 5},
-  
+    { image: img3, alt: "computer type", text: "Laptop", id: 4 },
   ];
 
   // Hooks for component's state and lifecycle management
@@ -126,7 +121,7 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
                         : ""
                     }
                   />
-                  <p style={{color:'white'}}>{item.text}</p>
+                  <p style={{ color: "white" }}>{item.text}</p>
                 </div>
               );
             })}
@@ -147,10 +142,10 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
         </div>
       </section>
       <div className="ellipse6">
-          <img src={ellipse6} alt='#'/>
+        <img src={ellipse6} alt="#" />
       </div>
       <div className="ellipse7">
-          <img src={ellipse7} alt='#'/>
+        <img src={ellipse7} alt="#" />
       </div>
       {/* <div className="ellipse121">
           <img src={ellipse121} alt='#'/>

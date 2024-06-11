@@ -1,13 +1,13 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LoginSignUp from '../Components/AuthPage/LoginSignUpPage';
-import HomePage from '../Components/LandingPage/Home/Home';
+// import React from 'react';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import LoginSignUp from '../Components/AuthPage/LoginSignUpPage';
+// import HomePage from '../Components/LandingPage/Home/Home';
 
-function Router() {
-  return (
+// function Router() {
+//   return (
 
-  <div></div>
-  )
-}
+//   <div></div>
+//   )
+// }
 
-export default Router;
+// export default Router;
