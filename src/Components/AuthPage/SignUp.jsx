@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import './LoginForm.css';
 import "./LoginSignUpPage.css";
-import { FaUserTie } from "react-icons/fa";
-import { FaLock } from "react-icons/fa";
+import { FaUserTie, FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import axios from "axios";
 import useSignup from "../../Data/useSignup";
@@ -23,58 +21,53 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    // console.log(event.target); //This will print input tag in console if we type anything in input
-
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    signup.mutate(values, {
-      onSuccess() {
-        navigate("/");
-      },
-      onError(error) {
-        console.log(error);
-      },
-    });
     setFormErrors(validate(values));
     setIsSubmit(true);
   };
 
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(values);
+      signup.mutate(values, {
+        onSuccess: () => {
+          // Vérifier si l'utilisateur est connecté
+          const isLoggedIn = false; // Remplacez par la logique de vérification de connexion
+          if (!isLoggedIn) {
+            navigate("/login"); // Redirige vers la page de connexion si non connecté
+          }
+        },
+        onError: (error) => {
+          console.log(error);
+        },
+      });
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmit]);
 
   const validate = (vals) => {
     const errors = {};
-    const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/; //for e-mail validation purposes
+    const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/; // pour la validation des e-mails
 
     if (!vals.firstName) {
-      errors.firstName = "first name is required!";
+      errors.firstName = "First name is required!";
     }
     if (!vals.lastName) {
-      errors.lastName = "last name is required!";
+      errors.lastName = "Last name is required!";
     }
-    // E-mail
     if (!vals.email) {
       errors.email = "Email is required!";
     } else if (!regex.test(vals.email)) {
       errors.email = "This is not a valid email format!";
     }
-
-    // Password
     if (!vals.password) {
       errors.password = "Password is required";
     } else if (vals.password.length < 8) {
       errors.password = "Password must be more than 8 characters";
     }
-
     if (!vals.confirmPassword) {
       errors.confirmPassword = "Please confirm your password";
     } else if (vals.confirmPassword !== vals.password) {
@@ -114,7 +107,6 @@ const SignUp = () => {
                 <FaUserTie className="icon" />
               </div>
               <p>{formErrors.lastName}</p>
-
               <div className="input-box">
                 <input
                   type="text"
@@ -139,7 +131,6 @@ const SignUp = () => {
                 <FaLock className="icon" />
               </div>
               <p>{formErrors.password}</p>
-
               <div className="input-box">
                 <input
                   type="password"
@@ -152,10 +143,7 @@ const SignUp = () => {
                 <FaLock className="icon" />
               </div>
             </div>
-
-            <button type="submit" className="btn-signup">
-              Sign Up
-            </button>
+            <button type="submit" className="btn-signup">Sign Up</button>
           </form>
         </div>
       </div>

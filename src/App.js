@@ -12,6 +12,7 @@ import NavBar from "./Components/LandingPage/NavBar/NavBar";
 import Footer from "./Components/LandingPage/Footer/Footer";
 import ProfilUser from "./Components/ProfilUser/profilUser";
 import FavoritesList from "../src/Components/ProfilUser/FavorisListe";
+import NewsletterForm from "./Components/newsletter/newsletter";
 // import CarouselSection from './Components/LandingPage/CarouselSection/CarouselSection';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
           <Route path="/user-profil" element={<ProfilUser />} />
           <Route path="/favorite-liste" element={<FavoritesList />} />
+          <Route path="/newsletter" element={<NewsletterForm />} />
         </Routes>
         <Footer />
       </BrowserRouter>
