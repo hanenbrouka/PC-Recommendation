@@ -3,26 +3,13 @@ import "../AuthPage/LoginSignUpPage.css";
 import { FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import useLogin from "../../Data/useLogin";
 import { queryClient } from "../..";
 import Cookies from 'js-cookie';
 
-
-
 function Login() {
   const navigate = useNavigate();
-  const handleSignSubmit = () => {
-    navigate("/signup");
-  };
-  const handleProfilSubmit = () => {
-    navigate("/user-profil");
-  };
-  const initialValues = {
-    email: "",
-    password: "",
-  };
-  const [values, setValues] = useState(initialValues);
+  const [values, setValues] = useState({ email: "", password: "" });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -36,42 +23,46 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    login.mutate(values, {
-      onSuccess(result) {
-        queryClient.setQueriesData(["me"], result.data);
+    // Valider les champs de formulaire
+    const errors = validate(values);
+    setFormErrors(errors);
 
-        Cookies.set("token", result.data.token, { expires: 7 });
+    if (Object.keys(errors).length === 0) {
+      setIsSubmit(true);
 
-        if (result.data === "sucess") navigate("/");
-      },
-      onError(error) {
-        console.log(error);
-      },
-    });
+      // Appel à l'API de connexion
+      login.mutate(values, {
+        onSuccess: (result) => {
+          queryClient.setQueryData(["me"], result.data);
+          Cookies.set("token", result.data.token, { expires: 7 });
 
-    setFormErrors(validate(values));
-    setIsSubmit(true);
+          // Redirection après connexion réussie
+          navigate("/");
+        },
+        onError: (error) => {
+          console.log(error);
+          setFormErrors({ submit: "Erreur lors de la connexion. Veuillez réessayer." });
+        },
+      });
+    }
   };
 
   useEffect(() => {
-    console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      console.log(values);
+      console.log("Form submitted successfully");
     }
-  }, [formErrors]);
+  }, [formErrors, isSubmit]);
 
   const validate = (vals) => {
     const errors = {};
-    const regex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/; //for e-mail validation purposes
+    const emailRegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
 
-    // E-mail
     if (!vals.email) {
       errors.email = "Email is required!";
-    } else if (!regex.test(vals.email)) {
+    } else if (!emailRegex.test(vals.email)) {
       errors.email = "This is not a valid email format!";
     }
 
-    // Password
     if (!vals.password) {
       errors.password = "Password is required";
     } else if (vals.password.length < 8) {
@@ -80,62 +71,63 @@ function Login() {
 
     return errors;
   };
+
   return (
-    <div>
-      <div className="login-page">
-        <div className="wrapper">
-          <form onSubmit={handleSubmit}>
-            <h1>Login</h1>
-            <div className="inputs">
-              <div className="input-box">
-                <input
-                  type="text"
-                  name="email"
-                  value={values.email}
-                  placeholder="Email"
-                  onChange={handleChange}
-                  required
-                />
-                <IoIosMail className="icon" />
-              </div>
-              <p>{formErrors.email}</p>
-              <div className="input-box">
-                <input
-                  type="password"
-                  name="password"
-                  value={values.password}
-                  placeholder="Passeword"
-                  onChange={handleChange}
-                  required
-                />
-                <FaLock className="icon" />
-              </div>
-              <p>{formErrors.password}</p>
+    <div className="login-page">
+      <div className="wrapper">
+        <form onSubmit={handleSubmit}>
+          <h1>Login</h1>
+          <div className="inputs">
+            <div className="input-box">
+              <input
+                type="text"
+                name="email"
+                value={values.email}
+                placeholder="Email"
+                onChange={handleChange}
+                required
+              />
+              <IoIosMail className="icon" />
             </div>
-
-            <div className="remember-forgot">
-              <label>
-                <input type="checkbox" />
-                Remember me
-              </label>
-              <br></br>
-              <a href="/forgot-password" className="blue">
-                Forgot password?
-              </a>
+            <p>{formErrors.email}</p>
+            <div className="input-box">
+              <input
+                type="password"
+                name="password"
+                value={values.password}
+                placeholder="Password"
+                onChange={handleChange}
+                required
+              />
+              <FaLock className="icon" />
             </div>
+            <p>{formErrors.password}</p>
+          </div>
 
-            <button type="submit" className="btn-login" onClick={handleSubmit}>
-              Login
-            </button>
-            <button
-              type="button"
-              className="btn-signup"
-              onClick={handleSignSubmit}
-            >
-              Sign UP
-            </button>
-          </form>
-        </div>
+          <div className="remember-forgot">
+            <label>
+              <input type="checkbox" />
+              Remember me
+            </label>
+            <br></br>
+            <a href="/forgot-password" className="blue">
+              Forgot password?
+            </a>
+          </div>
+
+          {formErrors.submit && <p className="error">{formErrors.submit}</p>}
+
+          <button type="submit" className="btn-login">
+            Login
+          </button>
+          <button
+            type="button"
+            className="btn-signup"
+            onClick={() => navigate("/signup")}
+          >
+            Sign UP
+          </button>
+        </form>
       </div>
     </div>
   );

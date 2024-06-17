@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./LoginSignUpPage.css";
 import { FaUserTie, FaLock } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import axios from "axios";
 import useSignup from "../../Data/useSignup";
 import { useNavigate } from "react-router-dom";
 
@@ -27,26 +26,26 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormErrors(validate(values));
-    setIsSubmit(true);
+    const errors = validate(values);
+    setFormErrors(errors);
+    setIsSubmit(Object.keys(errors).length === 0);
   };
 
   useEffect(() => {
-    if (Object.keys(formErrors).length === 0 && isSubmit) {
+    if (isSubmit) {
       signup.mutate(values, {
         onSuccess: () => {
-          // Vérifier si l'utilisateur est connecté
-          const isLoggedIn = false; // Remplacez par la logique de vérification de connexion
-          if (!isLoggedIn) {
-            navigate("/login"); // Redirige vers la page de connexion si non connecté
-          }
+          // Si l'inscription est réussie, rediriger vers la page de connexion
+          navigate("/login");
         },
         onError: (error) => {
           console.log(error);
         },
       });
+      // Réinitialiser l'état de soumission pour éviter les soumissions multiples
+      setIsSubmit(false);
     }
-  }, [formErrors, isSubmit]);
+  }, [isSubmit]);
 
   const validate = (vals) => {
     const errors = {};

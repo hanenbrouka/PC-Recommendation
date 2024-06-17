@@ -38,9 +38,16 @@ const NavBar = () => {
   };
 
   const handleLogoutClick = () => {
-    Cookies.remove('token'); // Suppression du cookie de token
-    queryClient.setQueryData('me', null); // Réinitialisation des données du profil utilisateur dans le cache de React Query
-    navigate("/");
+    // Suppression du cookie de token
+    Cookies.remove('token');
+
+    // Réinitialisation des données du profil utilisateur dans le cache de React Query
+    queryClient.setQueryData('me', null);
+
+    // Redirection vers la page de connexion
+    navigate("/login");
+
+    // Fermeture du menu
     handleMenuClose();
   };
 

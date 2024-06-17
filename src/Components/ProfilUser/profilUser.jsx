@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "../ProfilUser/profilUser.css";
+import useMyProfile from "../../Data/useMyProfile";
 import profileImage from '../../images/tessst.png'; // Importez votre image ici
 
-const initialUser = {
-  firstName: "John",
-  lastName: "Doe",
-  email: "john.doe@example.com",
-  password: "password123",
-  confirmPassword: "password123",
-};
-
 const ProfilUser = () => {
-  const [user, setUser] = useState(initialUser);
+  const [user, setUser] = useState(null); // Utilisation de useState pour gérer l'état de l'utilisateur
   const [activeTab, setActiveTab] = useState("profil");
+  const me = useMyProfile();
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log("User data loaded");
-    }, 1000);
-  }, []);
+    if (me.data) {
+      setUser(me.data.user); // Mise à jour de l'état de l'utilisateur lorsque les données sont disponibles
+    }
+  }, [me.data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,6 +22,7 @@ const ProfilUser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Changes sent:", user);
+    // Ici, vous pouvez envoyer les modifications à votre backend si nécessaire
   };
 
   return (
@@ -50,7 +45,7 @@ const ProfilUser = () => {
           <img src={profileImage} className="tessst" alt="Profile" /> {/* Ajoutez l'image ici */}
         </div>
         <div className="card-body">
-          {activeTab === "profil" && (
+          {user && activeTab === "profil" && ( // Vérification que user est défini avant d'afficher le formulaire
             <form onSubmit={handleSubmit} className="informations">
               <h2 className="infor">Edit Profile</h2>
               <div className="col">
@@ -96,7 +91,7 @@ const ProfilUser = () => {
                   <input
                     type="password"
                     name="password"
-                    value={user.password}
+                    // value={user.password} 
                     onChange={handleChange}
                     className="input"
                   />
@@ -108,7 +103,7 @@ const ProfilUser = () => {
                   <input
                     type="password"
                     name="confirmPassword"
-                    value={user.confirmPassword}
+                    // value={user.confirmPassword}
                     onChange={handleChange}
                     className="input"
                   />
