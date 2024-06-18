@@ -1,39 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import "../ProfilUser/profilUser.css"; // Assurez-vous d'inclure les bons styles
-import tesst from "../../images/tesssst2.png";
-
-
-const initialFavorites = [
-  { Name: "Favorite 1" },
-  { Name: "Favorite 2" },
-  { Name: "Favorite 3" },
-];
+import { useFavorites } from "./FavoritesContext"; // Importez le hook de contexte
 
 const FavoritesList = () => {
-  const [favorites, setFavorites] = useState(initialFavorites);
+  const { favorites, addFavorite, removeFavorite } = useFavorites();
 
-  const handleDeleteFavorite = (index) => {
-    const newFavorites = favorites.filter((_, i) => i !== index);
-    setFavorites(newFavorites);
-  };
+  // const handleDeleteFavorite = (index) => {
+  //   const newFavorites = favorites.filter((_, i) => i !== index);
+  //   setFavorites(newFavorites);
+  // };
 
   return (
-   <div className="contt">
-   <div className="cont11">
-    <div className="favorites">
-      <h2>Favorites List</h2>
-      <ul>
+    <div className="favorites-container">
+      <h2 className="favorites-title">Favorites List</h2>
+      <div className="favorites-grid">
         {favorites.map((favorite, index) => (
-          <li key={index}>
-            {favorite.Name}
-            <button onClick={() => handleDeleteFavorite(index)}>Supprimer</button>
-          </li>
+          <div className="favorite-card" key={index}>
+            <img src={favorite.Image} alt={favorite.Name} className="favorite-card-img" />
+            <div className="favorite-card-body">
+              <h5 className="favorite-card-title">{favorite.Name}</h5>
+              <p className="favorite-card-text">{favorite.Description}</p>
+              <a href={favorite.Link} className="favorite-card-text">Consulter le vendeur</a>
+              <button className="favorite-delete-btn" onClick={() => removeFavorite(favorite._id)}>
+                Supprimer
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
-    </div>
-    <img src={tesst} className="tesst"></img>
-    </div>
-   
+      </div>
     </div>
   );
 };
