@@ -86,7 +86,19 @@ const ProfilUser = () => {
                 </label>
                 <br />
                 <label className="text">
-                  Password:
+                    Password:
+                  <br />
+                  <input
+                    type="password"
+                    name="password"
+                    // value={user.password} 
+                    onChange={handleChange}
+                    className="input"
+                  />
+                </label>
+                <br/>
+                <label className="text">
+                   New Password:
                   <br />
                   <input
                     type="password"
@@ -98,7 +110,7 @@ const ProfilUser = () => {
                 </label>
                 <br />
                 <label className="text">
-                  Confirm Password:
+                  Confirm New Password:
                   <br />
                   <input
                     type="password"
