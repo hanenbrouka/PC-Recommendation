@@ -1,28 +1,53 @@
 import React, { useState, useEffect } from "react";
 import "../ProfilUser/profilUser.css";
-import useMyProfile from "../../Data/useMyProfile";
-import profileImage from '../../images/tessst.png'; // Importez votre image ici
+import useMyProfile, { useUpdateProfile } from "../../Data/useMyProfile";
+import profileImage from '../../images/tessst.png';
 
 const ProfilUser = () => {
-  const [user, setUser] = useState(null); // Utilisation de useState pour gérer l'état de l'utilisateur
+  const [user, setUser] = useState(null);
   const [activeTab, setActiveTab] = useState("profil");
   const me = useMyProfile();
+  const updateProfile = useUpdateProfile();
+
+  const [passwords, setPasswords] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: ""
+  });
 
   useEffect(() => {
     if (me.data) {
-      setUser(me.data.user); // Mise à jour de l'état de l'utilisateur lorsque les données sont disponibles
+      // Assurez-vous que me.data.user est défini avant de définir l'utilisateur
+      setUser(me.data.user || null);
     }
   }, [me.data]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUser((prevUser) => ({ ...prevUser, [name]: value }));
+    if (name === "currentPassword" || name === "newPassword" || name === "confirmPassword") {
+      setPasswords(prevPasswords => ({ ...prevPasswords, [name]: value }));
+    } else {
+      setUser(prevUser => ({ ...prevUser, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Changes sent:", user);
-    // Ici, vous pouvez envoyer les modifications à votre backend si nécessaire
+    const updatedData = {
+      ...user,
+      currentPassword: passwords.currentPassword,
+      newPassword: passwords.newPassword,
+      confirmPassword: passwords.confirmPassword
+    };
+
+    updateProfile.mutate(updatedData, {
+      onSuccess: (data) => {
+        console.log("Profile updated successfully:", data);
+      },
+      onError: (error) => {
+        console.error("Error updating profile:", error);
+      }
+    });
   };
 
   return (
@@ -42,10 +67,10 @@ const ProfilUser = () => {
           </ul>
         </div>
         <div>
-          <img src={profileImage} className="tessst" alt="Profile" /> {/* Ajoutez l'image ici */}
+          <img src={profileImage} className="tessst" alt="Profile" />
         </div>
         <div className="card-body">
-          {user && activeTab === "profil" && ( // Vérification que user est défini avant d'afficher le formulaire
+          {user && activeTab === "profil" && (
             <form onSubmit={handleSubmit} className="informations">
               <h2 className="infor">Edit Profile</h2>
               <div className="col">
@@ -55,7 +80,7 @@ const ProfilUser = () => {
                   <input
                     type="text"
                     name="firstName"
-                    value={user.firstName}
+                    value={user?.user?.firstName || ""}
                     onChange={handleChange}
                     className="input"
                   />
@@ -67,7 +92,7 @@ const ProfilUser = () => {
                   <input
                     type="text"
                     name="lastName"
-                    value={user.lastName}
+                    value={user?.user?.lastName || ""}
                     onChange={handleChange}
                     className="input"
                   />
@@ -79,43 +104,43 @@ const ProfilUser = () => {
                   <input
                     type="email"
                     name="email"
-                    value={user.email}
+                    value={user?.user?.email || ""}
                     onChange={handleChange}
                     className="input"
                   />
                 </label>
                 <br />
                 <label className="text">
-                    Password:
+                  Current Password:
                   <br />
                   <input
                     type="password"
-                    name="password"
-                    // value={user.password} 
-                    onChange={handleChange}
-                    className="input"
-                  />
-                </label>
-                <br/>
-                <label className="text">
-                   New Password:
-                  <br />
-                  <input
-                    type="password"
-                    name="password"
-                    // value={user.password} 
+                    name="currentPassword"
+                    value={passwords.currentPassword}
                     onChange={handleChange}
                     className="input"
                   />
                 </label>
                 <br />
                 <label className="text">
-                  Confirm New Password:
+                  New Password:
+                  <br />
+                  <input
+                    type="password"
+                    name="newPassword"
+                    value={passwords.newPassword}
+                    onChange={handleChange}
+                    className="input"
+                  />
+                </label>
+                <br />
+                <label className="text">
+                  Confirm Password:
                   <br />
                   <input
                     type="password"
                     name="confirmPassword"
-                    // value={user.confirmPassword}
+                    value={passwords.confirmPassword}
                     onChange={handleChange}
                     className="input"
                   />

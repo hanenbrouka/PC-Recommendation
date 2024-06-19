@@ -1,20 +1,20 @@
-import React, { useState } from "react";
+// PcCard.js
+
+import React from "react";
 import "../PcCard/PcCard.css";
 import { GrFavorite } from "react-icons/gr";
-// import { useDispatch } from "react-redux";
-// import { addFavorite } from "../../../Redux/slices/favorite.slice";
-import pcData from "../../../pcData.json"; // Importez les données depuis le fichier JSON
+import pcData from "../../../pcData.json"; // Importer les données depuis le fichier JSON
+import { useFavorites } from "../../ProfilUser/FavoritesContext";
 
 function PcCard() {
-  const [favorites, setFavorites] = useState([]);
+  const { favorites, addFavorite, removeFavorite } = useFavorites();
 
   const handleToggleFavorite = (pc) => {
-    const isFavorite = favorites.some((favorite) => favorite.Name === pc.Name);
+    const isFavorite = favorites.some((favorite) => favorite._id === pc._id);
     if (!isFavorite) {
-      setFavorites([...favorites, pc]);
+      addFavorite(pc); // Ajouter aux favoris
     } else {
-      const updatedFavorites = favorites.filter((favorite) => favorite.Name !== pc.Name);
-      setFavorites(updatedFavorites);
+      removeFavorite(pc.Name); // Supprimer des favoris
     }
   };
 
@@ -26,7 +26,6 @@ function PcCard() {
     return columns;
   };
 
-  // Utilisez les données importées
   const additionalLaptops = pcData;
   const columns = splitIntoColumns(additionalLaptops, 3);
 
@@ -54,12 +53,11 @@ function PcCard() {
                       </div>
                       <h>{card.availability}</h>
                       <div>
-                      <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button>
-                      <button className="favorite-btn" onClick={() => handleToggleFavorite(card)}>
-                        <GrFavorite color={favorites.some((favorite) => favorite.Name === card.Name) ? "red" : "black"} />
-                      </button>
-                    </div>
-
+                        <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button>
+                        <button className="favorite-btn" onClick={() => handleToggleFavorite(card)}>
+                          <GrFavorite color={favorites.some((favorite) => favorite._id === card._id) ? "red" : "black"} />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}

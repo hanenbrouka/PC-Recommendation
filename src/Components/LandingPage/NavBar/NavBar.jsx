@@ -51,8 +51,8 @@ const NavBar = () => {
     handleMenuClose();
   };
 
-  const fullname = me.data?.user.firstName + " " + me.data?.user.lastName;
-
+  const fullname = me.data?.user?.user?.firstName + " " + me.data?.user?.user?.lastName;
+console.log(me?.data?.user);
   return (
     <header className="nav">
       <div className="toolbar">
