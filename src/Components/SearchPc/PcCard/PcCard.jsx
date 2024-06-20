@@ -1,10 +1,9 @@
-// PcCard.js
-
 import React from "react";
 import "../PcCard/PcCard.css";
 import { GrFavorite } from "react-icons/gr";
 import pcData from "../../../pcData.json"; // Importer les données depuis le fichier JSON
 import { useFavorites } from "../../ProfilUser/FavoritesContext";
+import { Link } from "react-router-dom";
 
 function PcCard() {
   const { favorites, addFavorite, removeFavorite } = useFavorites();
@@ -53,7 +52,10 @@ function PcCard() {
                       </div>
                       <h>{card.availability}</h>
                       <div>
-                        <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button>
+                        <Link to={"/pc-detail"} className="card-btn">
+                        Check it out
+                        </Link>
+                        {/* <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button> */}
                         <button className="favorite-btn" onClick={() => handleToggleFavorite(card)}>
                           <GrFavorite color={favorites.some((favorite) => favorite._id === card._id) ? "red" : "black"} />
                         </button>

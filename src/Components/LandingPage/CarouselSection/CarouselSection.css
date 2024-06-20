@@ -30,6 +30,14 @@
       width: 16em !important;
     } */
   }
+
+  .carousel-item img.selected {
+    border: 2px solid #ff9800; /* Vous pouvez personnaliser la couleur et la taille de la bordure */
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.8); /* Effet de surbrillance */
+    transform: scale(1.1); /* Légèrement agrandir l'image */
+    transition: all 0.3s ease-in-out; /* Ajouter une transition pour une apparence plus fluide */
+  }
+  
   
    .carousel-section h3 {
    
