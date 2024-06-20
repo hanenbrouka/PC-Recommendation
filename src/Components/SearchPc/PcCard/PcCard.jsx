@@ -57,7 +57,7 @@ function PcCard() {
                         </Link>
                         {/* <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button> */}
                         <button className="favorite-btn" onClick={() => handleToggleFavorite(card)}>
-                          <GrFavorite color={favorites.some((favorite) => favorite._id === card._id) ? "red" : "black"} />
+                          <GrFavorite color={favorites.some((favorite) => favorite._id === card._id) ? "red" : "white"} />
                         </button>
                       </div>
                     </div>

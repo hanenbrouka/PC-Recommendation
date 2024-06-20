@@ -198,8 +198,8 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
 
   const handleImageSelection = (index) => {
     setClickedImage(index);
-    setSelectedImageText(initialCarouselItems[index].text);
-    console.log(initialCarouselItems[index].text);
+    setSelectedImageText(initialCarouselItems.find(item => item.id === index).text);
+    console.log(initialCarouselItems.find(item => item.id === index).text);
   };
 
   useEffect(() => {
@@ -256,7 +256,8 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
               <MdOutlineArrowBackIosNew />
             </button>
             {currentImages?.map((item) => {
-              const itemClass = `carousel-item item-${item.id + 1}`;
+              const isSelected = selectedImage === item.id || clickedImage === item.id;
+              const itemClass = `carousel-item item-${item.id + 1} ${isSelected ? "selected" : ""}`;
 
               return (
                 <div key={item.id}>
@@ -281,11 +282,7 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
             </button>
           </div>
         </div>
-        <div>
-          <button className="search-btn" onClick={navigateToSearch}>
-            Search
-          </button>
-        </div>
+        
 
         <div className="background-shapes">
           <img src={background} alt="Background Shapes" />

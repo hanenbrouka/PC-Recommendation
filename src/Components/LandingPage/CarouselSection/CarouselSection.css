@@ -1,6 +1,7 @@
 
   .carousel-section{
     z-index: 100;
+
   }
  
   .background-shapes img {
@@ -122,7 +123,10 @@
   /* font-family: Poppins; */
   font-weight: 700;
   letter-spacing: 0.06875rem;
-  margin-bottom:10% ;
+  margin-bottom:15% ;
+  margin-top: -40%;
+  
+  
 }
 
 .search-btn:hover {
@@ -142,6 +146,7 @@ Add active (click) effect */
 
 .background-shapes img {
   display: block;
+  margin-top: -20%;
 } 
 .carousel-section {
     padding-left: 0;

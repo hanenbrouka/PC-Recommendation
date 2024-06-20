@@ -12,6 +12,7 @@
  background: #3c413f;
 
 }
+
 .cont11 { 
     
   position: relative;
@@ -26,7 +27,26 @@
   background: #3c413f;
  
  }
+ .cont111 { 
+    
+  position: relative;
+  width:1200px;
+  height: 600px;
+  color: #fff;
+  border-radius: 20px;
+  padding: 20px 60px ;
+  margin-top:4%;
+  margin-bottom: 4%;
+  margin-left: 10.5%;
+  background: #3c413f;
+ 
+ }
 .contt{
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(36, 36, 36, 255);
+}
+.conttt{
   overflow: hidden;
   position: relative;
   background-color: rgba(36, 36, 36, 255);
@@ -98,8 +118,8 @@
 .tesst {
   width: 700px; /* Ajustez la largeur selon vos besoins */
   height: auto; /* Assure que l'image conserve ses proportions */
- margin-left: 600px;
-  margin-top: -18% !important;
+ margin-left: 650px;
+  margin-top: -10% !important;
  border-radius: 50%; /* Exemple: rendre l'image circulaire */
 }
 
