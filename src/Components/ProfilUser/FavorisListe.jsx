@@ -1,6 +1,7 @@
 import React from "react";
 import "../ProfilUser/profilUser.css"; // Assurez-vous d'inclure les bons styles
 import { useFavorites } from "./FavoritesContext"; // Importez le hook de contexte
+import tesst from "../../images/tesssst2.png";
 
 const FavoritesList = () => {
   const { favorites, addFavorite, removeFavorite } = useFavorites();
@@ -11,8 +12,10 @@ const FavoritesList = () => {
   // };
 
   return (
-    <div className="favorites-container">
-      <h2 className="favorites-title">Favorites List</h2>
+    <div className="container-card">
+    <div className="conttt">
+    <div className="cont111">
+      <h2 className="favorites">Favorites List</h2>
       <div className="favorites-grid">
         {favorites.map((favorite, index) => (
           <div className="favorite-card" key={index}>
@@ -25,9 +28,14 @@ const FavoritesList = () => {
                 Supprimer
               </button>
             </div>
+           
           </div>
         ))}
       </div>
+      <img src={tesst} className="tesst"></img>
+      </div>
+      
+    </div>
     </div>
   );
 };

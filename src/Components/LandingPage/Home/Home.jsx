@@ -12,6 +12,14 @@ const HomePage = () => {
 
   // Define state for price range
   const [priceRange, setPriceRange] = useState([500, 3850]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  
+    
+  
+    // Log selected categories for debugging purposes
+    useEffect(() => {
+      console.log("Updated selected categories in Home:", selectedCategories);
+    }, [selectedCategories]);
 
   // Log price updates for debugging purposes
   useEffect(() => {
@@ -21,8 +29,15 @@ const HomePage = () => {
   // Function to handle navigation to the search page with the selected price range
   const navigateToSearchPage = () => {
     const [minPrice, maxPrice] = priceRange;
-    navigate(`/search?minPrice=${minPrice}&maxPrice=${maxPrice}`);
-    console.log("Navigating with price range:", minPrice, maxPrice);
+    const filter = {
+      min_budget: minPrice,
+      max_budget: maxPrice,
+      categories: selectedCategories,
+      num_pcs: 15 // Example value, 
+    };
+
+    navigate(`/search`,{ state: { filter } });
+    console.log("Navigating with filter:", minPrice, maxPrice);
   };
 
   return (
@@ -33,7 +48,12 @@ const HomePage = () => {
         <SearchMenu setValues={setPriceRange} />
 
         {/* Pass the price range to the CarouselSection for filtering or other purposes */}
-        <Carousel minPrice={priceRange[0]} maxPrice={priceRange[1]} />
+        <Carousel minPrice={priceRange[0]} maxPrice={priceRange[1]}  setSelectedCategories={setSelectedCategories} />
+        
+          <button className="search-btn" onClick={navigateToSearchPage}>
+            Search
+          </button>
+      
       </div>
     </section>
   );

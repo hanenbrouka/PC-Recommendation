@@ -33,17 +33,12 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
 
   const resizeListener = useRef(null);
 
-  // Navigate to search page with selected image parameters
-  const navigateToSearch = () => {
-    navigate(
-      `/search?minPrice=${minPrice}&maxPrice=${maxPrice}&text=${selectedImageText}`
-    );
-  };
+  
   // Handler to manage selection of an image from the carousel
   const handleImageSelection = (index) => {
     setClickedImage(index);
-    setSelectedImageText(initialCarouselItems[index].text);
-    console.log(initialCarouselItems[index].text);
+    setSelectedImageText(initialCarouselItems.find(item => item.id === index).text);
+    console.log(initialCarouselItems.find(item => item.id === index).text);
   };
 
   // Effect to listen for window resize and update the count of visible images
@@ -105,7 +100,8 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
             </button>
             {/* Render the images in the carousel */}
             {currentImages?.map((item) => {
-              const itemClass = `carousel-item item-${item.id + 1}`;
+              const isSelected = selectedImage === item.id || clickedImage === item.id;
+              const itemClass = `carousel-item item-${item.id + 1} ${isSelected ? "selected" : ""}`;
 
               return (
                 <div key={item.id}>
@@ -115,11 +111,7 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
                     onClick={() => handleImageSelection(item.id)}
                     onMouseEnter={() => handleMouseEnter(item.id)}
                     onMouseLeave={() => handleMouseLeave(item.id)}
-                    className={
-                      selectedImage === item.id || clickedImage === item.id
-                        ? "blur"
-                        : ""
-                    }
+                    className={isSelected ? "selected" : ""}
                   />
                   <p style={{ color: "white" }}>{item.text}</p>
                 </div>
@@ -131,11 +123,7 @@ const CarouselSection = ({ minPrice, maxPrice }) => {
             </button>
           </div>
         </div>
-        <div>
-          <button className="search-btn" onClick={navigateToSearch}>
-            Search
-          </button>
-        </div>
+        
 
         <div className="background-shapes">
           <img src={background} alt="Background Shapes" />
