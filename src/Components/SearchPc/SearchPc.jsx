@@ -5,20 +5,20 @@ import SideBar from "../SearchPc/SideBar/SideBar";
 import SearchBar from "./SearchBar/SearchBar";
 
 import PcCard from "./PcCard/PcCard";
-import NombrePc from './NombrePc/NombrePc';
+import NombrePc from "./NombrePc/NombrePc";
+import SearchMenu from "../LandingPage/SearchMenu/SearchMenu";
 
 function SearchPc() {
   return (
     <div className="search-page-container">
-    <NombrePc/>
       <div className="main-search-page">
-        <SearchBar />
+        {/* <SearchBar /> */}
+        <NombrePc/>
         <div>
           <SideBar />
         </div>
         <PcCard />
       </div>
-    
     </div>
   );
 }

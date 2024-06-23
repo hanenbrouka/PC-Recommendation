@@ -46,10 +46,10 @@ function SideBar() {
             </div>
           </form>
         </div>
-        <div className="categorie-chackbox">
+        {/* <div className="categorie-chackbox">
           {/* Votre contenu pour les checkboxes */}
-        </div>
-        <Filtre />
+        {/* </div> */} 
+        {/* <Filtre /> */}
       </div>
     </div>
   );

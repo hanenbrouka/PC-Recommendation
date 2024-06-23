@@ -22,6 +22,8 @@
     background: #3c413f;
     box-shadow: inset -1px -1px 0px rgba(241, 241, 245, 0.2);
     padding: 1em 0em 1em 4em;
+    height: 50px;
+    
     border: none;
     flex-grow: 1;
   }
@@ -29,6 +31,7 @@
   .first-search {
     border-radius: 10px 0px 0px 10px;
     color: #f6f6f6;
+    
   }
   .second-search {
     color: #b5b5be;

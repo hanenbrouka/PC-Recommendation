@@ -11,9 +11,13 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const [minPrice, maxPrice] = priceRange.split(" - ").map(price => price.replace("DT", "").trim());
+    const [minPrice, maxPrice] = priceRange
+      .split(" - ")
+      .map((price) => price.replace("DT", "").trim());
 
-    navigate(`/search?minPrice=${minPrice}&maxPrice=${maxPrice}&category=${category}`);
+    navigate(
+      `/search?minPrice=${minPrice}&maxPrice=${maxPrice}&category=${category}`
+    );
   };
 
   return (
@@ -22,29 +26,18 @@ function SearchBar() {
         <div className="search-wrapper">
           <div className="input-wrapper2">
             <div className="icon-wrapper1">
-              <BiSearch />
+              {/* <BiSearch /> */}
             </div>
-            <input
+            {/* <input
               className="first-search"
               type="text"
-              placeholder="Categories"
+              placeholder="Price"
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-            />
+            /> */}
           </div>
-          <div className="input-wrapper2">
-            <div className="icon-wrapper2">
-              <RiMoneyDollarBoxLine />
-            </div>
-            <input
-              type="text"
-              className="second-search"
-              placeholder="500 - 3850DT"
-              value={priceRange}
-              onChange={(e) => setPriceRange(e.target.value)}
-            />
-          </div>
-          <button type="submit">Search</button>
+{/* 
+          <button type="submit">Search</button> */}
         </div>
       </form>
     </div>
@@ -52,7 +45,6 @@ function SearchBar() {
 }
 
 export default SearchBar;
-
 
 // import React from "react";
 // import "../SearchBar/SearchBar.css";
@@ -92,6 +84,3 @@ export default SearchBar;
 // }
 
 // export default SearchBar;
-
-
-

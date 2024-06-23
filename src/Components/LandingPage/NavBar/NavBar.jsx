@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../NavBar/NavBar.css";
 import { useNavigate } from "react-router-dom";
 import useMyProfile from "../../../Data/useMyProfile";
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Button from '@mui/material/Button';
-import Cookies from 'js-cookie';
-import { queryClient } from '../../../../src/index';
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Button from "@mui/material/Button";
+import Cookies from "js-cookie";
+import { queryClient } from "../../../../src/index";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -39,10 +39,10 @@ const NavBar = () => {
 
   const handleLogoutClick = () => {
     // Suppression du cookie de token
-    Cookies.remove('token');
+    Cookies.remove("token");
 
     // Réinitialisation des données du profil utilisateur dans le cache de React Query
-    queryClient.setQueryData('me', null);
+    queryClient.setQueryData("me", null);
 
     // Redirection vers la page de connexion
     navigate("/login");
@@ -51,8 +51,8 @@ const NavBar = () => {
     handleMenuClose();
   };
 
-  const fullname = me.data?.user?.user?.firstName + " " + me.data?.user?.user?.lastName;
-console.log(me?.data?.user);
+  const fullname = me.data?.user?.firstName + " " + me.data?.user?.lastName;
+  console.log(me?.data?.user);
   return (
     <header className="nav">
       <div className="toolbar">
@@ -76,7 +76,9 @@ console.log(me?.data?.user);
               onClose={handleMenuClose}
             >
               <MenuItem onClick={handleProfileClick}>My Profile</MenuItem>
-              <MenuItem onClick={handleFavoritesClick}>My Favorite List</MenuItem>
+              <MenuItem onClick={handleFavoritesClick}>
+                My Favorite List
+              </MenuItem>
               <MenuItem onClick={handleLogoutClick}>Logout</MenuItem>
             </Menu>
           </div>

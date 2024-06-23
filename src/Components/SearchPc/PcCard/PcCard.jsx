@@ -3,9 +3,11 @@ import "../PcCard/PcCard.css";
 import { GrFavorite } from "react-icons/gr";
 import pcData from "../../../pcData.json"; // Importer les données depuis le fichier JSON
 import { useFavorites } from "../../ProfilUser/FavoritesContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import usePredictedProducts from "../../../Data/usePredictedProducts";
 
 function PcCard() {
+  const Navigate = useNavigate();
   const { favorites, addFavorite, removeFavorite } = useFavorites();
 
   const handleToggleFavorite = (pc) => {
@@ -25,6 +27,14 @@ function PcCard() {
     return columns;
   };
 
+  const products = usePredictedProducts();
+
+  if (products.isLoading || !products.data) {
+    return "loading...";
+  }
+
+  const pcData = products.data;
+
   const additionalLaptops = pcData;
   const columns = splitIntoColumns(additionalLaptops, 3);
 
@@ -37,7 +47,11 @@ function PcCard() {
               <div className="col-4 col-lg-2 aaa" key={columnIndex}>
                 {column.map((card, index) => (
                   <div className="card" key={index}>
-                    <img src={card.Image} className="card-img-top" alt={card.Name} />
+                    <img
+                      src={card.Image}
+                      className="card-img-top"
+                      alt={card.Name}
+                    />
                     <div className="card-body">
                       <p className="card-title">{card.Name}</p>
                       <p className="card-text">{card.Description}</p>
@@ -51,13 +65,34 @@ function PcCard() {
                         )}
                       </div>
                       <h>{card.availability}</h>
+                      <h className="index">{card.index}</h>
                       <div>
-                        <Link to={"/pc-detail"} className="card-btn">
-                        Check it out
-                        </Link>
+                        <button
+                          onClick={() =>
+                            Navigate("/pc-detail", {
+                              state: {
+                                product: card,
+                              },
+                            })
+                          }
+                          className="card-btnn"
+                        >
+                          Check it out
+                        </button>
                         {/* <button className="card-btn" onClick={() => (window.location.href = card.Link)}>Check it out</button> */}
-                        <button className="favorite-btn" onClick={() => handleToggleFavorite(card)}>
-                          <GrFavorite color={favorites.some((favorite) => favorite._id === card._id) ? "red" : "white"} />
+                        <button
+                          className="favorite-btn"
+                          onClick={() => handleToggleFavorite(card)}
+                        >
+                          <GrFavorite
+                            color={
+                              favorites.some(
+                                (favorite) => favorite._id === card._id
+                              )
+                                ? "red"
+                                : "white"
+                            }
+                          />
                         </button>
                       </div>
                     </div>

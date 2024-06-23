@@ -5,7 +5,7 @@ import pcData from "../../../pcData.json";
 
 function PC() {
   // Utilisez les données importées du fichier JSON
-  const laptops = pcData;
+  const laptops = pcData.slice(0, 5); // Ne prendre que les 5 premiers éléments
 
   return (
     <>

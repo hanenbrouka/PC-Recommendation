@@ -18,7 +18,7 @@ const ProfilUser = () => {
   useEffect(() => {
     if (me.data) {
       // Assurez-vous que me.data.user est défini avant de définir l'utilisateur
-      setUser(me.data.user || null);
+      setUser(me.data || null);
     }
   }, [me.data]);
 

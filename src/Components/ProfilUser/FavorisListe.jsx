@@ -19,12 +19,12 @@ const FavoritesList = () => {
       <div className="favorites-grid">
         {favorites.map((favorite, index) => (
           <div className="favorite-card" key={index}>
-            <img src={favorite.Image} alt={favorite.Name} className="favorite-card-img" />
+            {/* <img src={favorite.Image} alt={favorite.Name} className="favorite-card-img" /> */}
             <div className="favorite-card-body">
               <h5 className="favorite-card-title">{favorite.Name}</h5>
-              <p className="favorite-card-text">{favorite.Description}</p>
-              <a href={favorite.Link} className="favorite-card-text">Consulter le vendeur</a>
-              <button className="favorite-delete-btn" onClick={() => removeFavorite(favorite._id)}>
+              {/* <p className="favorite-card-text">{favorite.Description}</p> */}
+              <a href={favorite.Link} className="card-btnn">Consulter le vendeur</a>
+              <button className="card-btnn" onClick={() => removeFavorite(favorite._id)}>
                 Supprimer
               </button>
             </div>

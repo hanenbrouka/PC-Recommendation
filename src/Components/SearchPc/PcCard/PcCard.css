@@ -3,9 +3,47 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     margin-left: 20%;
-    margin-top: -67% !important;
+    margin-top: 43% !important;
     position: relative;
 }
+.card-btnn {
+    width: 8rem;
+    height: 2rem;
+    margin-right: 50%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #ffd369;
+    border: none;
+    color: #0d120e;
+    text-align: center;
+    font-size: 0.75rem;
+    font-family: Poppins;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
+    /* transition: all 0.3s ease; Transition douce pour l'ombre et la taille du texte */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
+  .card-btnnn {
+    width: 8rem;
+    height: 2rem;
+    margin-right: 50%;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #ffd369;
+    border: none;
+    color: #0d120e;
+    text-align: center;
+    font-size: 0.75rem;
+    font-family: Poppins;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    margin-bottom: -1rem;
+    /* transition: all 0.3s ease; Transition douce pour l'ombre et la taille du texte */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  }
 
 .container2 {
     display: flex;
@@ -21,6 +59,8 @@
 .favorite-btn{
     border: #f6f6f6;
     margin-left: 40px;
+    margin-bottom: -10%;
+    margin-top: -10% !important;
     background-color: #3c413f;
 }
 .card {
@@ -51,7 +91,7 @@
 }
 
 .card-btn {
-    width: 10rem;
+    width: 20rem;
     height: 8rem;
     margin-right: 50%;
     flex-shrink: 0;
@@ -87,6 +127,8 @@
     font-family: Poppins;
     font-weight: 600;
     cursor: pointer;
+    margin-left: 80%;
+    margin-top: -20%;
     transition: all 0.3s ease; /* Transition douce pour la couleur et la bordure */
   }
   
@@ -116,7 +158,13 @@
 }
 
 .card-title {
-    display: flex;
+    overflow: hidden;
+    color: #fffcf3;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.00625rem;
+    font-size: 0.8rem;
+    width: 200px;
 }
 
 .card-title p {
@@ -124,6 +172,18 @@
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.00625rem;
+    
+}
+.index{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    background: rgba(241, 241, 245, 0.1); 
 }
 
 .box {

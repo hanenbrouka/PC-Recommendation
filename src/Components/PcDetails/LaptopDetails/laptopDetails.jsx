@@ -9,8 +9,6 @@ import SearchBar from "../../SearchPc/SearchBar/SearchBar";
 import PC from "../PC/PC";
 import PcDetails from "../PcDetails";
 
-
-
 // Styles
 import "../LaptopDetails/laptopDetails.css";
 
@@ -21,9 +19,8 @@ const LaptopDetail = () => {
         <SearchBar />
 
         <div className="details-container">
-         
-          <SideBar className="side-bar" />
-        
+         <SideBar/>
+
           <div className="flex-details-1">
             <PcDetails />
           </div>
